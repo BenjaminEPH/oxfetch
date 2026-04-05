@@ -12,6 +12,7 @@ pub fn get_logo(distro_override: Option<&str>) -> &'static str {
         "arch" | "arch linux" => logos::ARCH,
         "ubuntu" | "debian" => logos::UBUNTU,
         "fedora" => logos::FEDORA,
+        "dragon" => logos::DRAGON,
         _ => logos::GENERIC,
     }
 }
