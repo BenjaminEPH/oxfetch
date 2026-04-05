@@ -11,7 +11,7 @@ pub struct Config {
     pub theme: Option<String>,
 
     #[serde(default)]
-    pub hide: Option<String>,
+    pub hide: Vec<String>,
 }
 
 impl Config {
