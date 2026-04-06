@@ -17,13 +17,23 @@ impl InfoSource for ShellInfo {
 
 impl ShellInfo {
     pub fn new() -> Self {
-        let name = env::var("SHELL")
-            .map(|path| {
-                // /bin/zsh → zsh
-                path.split('/').last().unwrap_or("Unknown").to_string()
-            })
-            .unwrap_or_else(|_| "Unknown".to_string());
+        let name = Self::fetch_shell();
 
         Self { name }
+    }
+
+    fn fetch_shell() -> String {
+        env::var("SHELL")
+            .map(|path| path.split('/').last().unwrap_or("Unknown").to_string())
+            .unwrap_or_else(|_| "Unknown".to_string())
+    }
+}
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn fetch_shell_not_unknown() {
+        let shell = ShellInfo::fetch_shell();
+        assert_ne!(shell, "Unknown");
     }
 }

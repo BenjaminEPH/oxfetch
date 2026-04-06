@@ -19,3 +19,11 @@ impl InfoSource for OsInfo {
         self.name.clone()
     }
 }
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn os_not_empty() {
+        assert!(!OsInfo::new().value().is_empty());
+    }
+}

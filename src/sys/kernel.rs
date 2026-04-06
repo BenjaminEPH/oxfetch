@@ -6,15 +6,29 @@ pub struct KernelInfo {
 
 impl KernelInfo {
     pub fn new() -> Self {
-        let name = System::kernel_version().unwrap_or_else(|| "Unknown".to_string());
+        let name = Self::fetch_kernel();
         Self { name }
     }
+
+    fn fetch_kernel() -> String {
+        System::kernel_version().unwrap_or_else(|| "Unknown".to_string())
+    }
 }
+
 impl InfoSource for KernelInfo {
     fn label(&self) -> &str {
-        "Kernel"
+        "KERNEL"
     }
     fn value(&self) -> String {
         self.name.clone()
+    }
+}
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn fetch_kernel_name_not_unknown() {
+        let name = KernelInfo::fetch_kernel();
+        assert_ne!(name, "Unknown");
     }
 }

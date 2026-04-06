@@ -24,3 +24,18 @@ impl UptimeInfo {
         }
     }
 }
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn valid_uptime() {
+        let uptime = UptimeInfo::new();
+        assert!(uptime.seconds > 0);
+    }
+    #[test]
+    fn valid_uptime_format() {
+        let info = UptimeInfo::new();
+        assert!(info.value().contains('h'));
+        assert!(info.value().contains('m'));
+    }
+}

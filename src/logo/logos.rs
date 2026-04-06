@@ -1,42 +1,38 @@
+//Credits for most of these ascii art are from the oficial fastfetch github repository: https://github.com/fastfetch-cli/fastfetch
 pub const VOID: &str = r#"
-                X         XX  XXXXX          
-XX             XX   X      X  XX  XXXX       
- XX          XXX  XXXXXX    X   X    XXX     
-  XXX       XX   XX    XXX  XX  X      X     
-    XX     XX   XX      XXX XX  X      X     
-     XX    X    X        XX  X  X     XX     
-      XXXXX      X       XX  XX XX   XX    XX
-        XX       XX       X  XX  X XXX  X  X 
-                  XX   XXX    X  XXX         
-                   XXXX                X    X
-                                        XXXX 
+    _______
+_ \______ -
+| \  ___  \ |
+| | /   \ | |
+| | \___/ | |
+| \______ \_|
+-_______\
 "#;
 pub const ARCH: &str = r#"
-       /\
-      /  \
-     /\  /\
-    /  \/  \
-   / ARCH   \
-  /____/\____\
+      /\
+     /  \
+    /    \
+   /      \
+$2  /   ,,   \
+ /   |  |   \
+/_-''    ''-_\
 "#;
 
 pub const UBUNTU: &str = r#"
-      .--.
-  .--(    )--.
- /    '--'    \
-|    UBUNTU    |
- \            /
-  '--(    )--'
-      '--'
+         _
+     ---(_)
+ _/  ---  \
+(_) |   |
+  \  --- _/
+     ---(_)
 "#;
 
 pub const FEDORA: &str = r#"
-    ___
-   /  /\
-  /  / /\
- /  / /  \
-/_________|
-   FEDORA
+     __
+    /  \
+ __ |_
+/   |
+\__/
 "#;
 
 pub const GENERIC: &str = r#"
